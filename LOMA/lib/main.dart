@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loma/SplashScreen.dart';
 import 'package:loma/new_account.dart';
 
 void main() {
@@ -6,12 +7,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp();
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Loginpage(),
+      home: splashScreen(),
+      // home: Loginpage(),
     );
   }
 }
@@ -53,7 +55,6 @@ class _LoginpageState extends State<Loginpage> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2.5,
-              child: Image(image: AssetImage("lib/assets/lomalogo.png"),),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(60),
@@ -61,6 +62,7 @@ class _LoginpageState extends State<Loginpage> {
                 ),
                 color: Colors.white,
               ),
+              child: const Image(image: AssetImage("lib/assets/lomalogo.png"),),
             ),
             const SizedBox(
               height: 20,
@@ -158,6 +160,10 @@ class _LoginpageState extends State<Loginpage> {
             Container(
               width: MediaQuery.of(context).size.width / 1.5,
               height: 40,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: const Center(
                 child: Text(
                   "Log in",
@@ -168,10 +174,6 @@ class _LoginpageState extends State<Loginpage> {
                     fontSize: 30,
                   ),
                 ),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10),
               ),
             ),
             const SizedBox(
